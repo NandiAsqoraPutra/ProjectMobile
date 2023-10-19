@@ -8,7 +8,8 @@ import {
   ImageBackground,
 } from 'react-native';
 import {Notification, Receipt21, Clock, Message} from 'iconsax-react-native';
-import {fontType, colors} from './src/assets/theme';
+import {fontType, colors} from './src/theme';
+
 export default function App() {
   return (
     <View style={styles.container}>
@@ -392,7 +393,7 @@ const ListBlog = () => {
               </View>
               <View style={itemVertical.cardInfo}>
                 <Clock size={10} variant="Linear" color={colors.grey(0.6)} />
-                <Text style={itemVertical.cardText}>Oct 155, 2023</Text>
+                <Text style={itemVertical.cardText}>Oct 15, 2023</Text>
                 <Message size={10} variant="Linear" color={colors.grey(0.6)} />
                 <Text style={itemVertical.cardText}>90</Text>
               </View>
