@@ -183,7 +183,7 @@ const itemHorizontal = StyleSheet.create({
   cardImage: {
     width: '100%',
     height: 200,
-    borderRadius: 5,
+    borderRadius: 35,
   },
   cardContent: {
     flexDirection: 'row',

@@ -26,12 +26,12 @@ const ItemSmall = ({item}) => {
             <Text style={styles.cardCategory}>{item.category}</Text>
             <Text style={styles.cardTitle}>{item.title}</Text>
           </View>
-          <Receipt21 color={colors.grey(0.6)} variant="Linear" size={20} />
+          <Receipt21 color={colors.black(0.6)} variant="Linear" size={20} />
         </View>
         <View style={styles.cardInfo}>
-          <Clock size={10} variant="Linear" color={colors.grey(0.6)} />
+          <Clock size={10} variant="Linear" color={colors.black(0.6)} />
           <Text style={styles.cardText}>{item.createdAt}</Text>
-          <Message size={10} variant="Linear" color={colors.grey(0.6)} />
+          <Message size={10} variant="Linear" color={colors.black(0.6)} />
           <Text style={styles.cardText}>{item.totalComments}</Text>
         </View>
       </View>
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   cardImage: {
     width: 94,
     height: 94,
-    borderRadius: 10,
+    borderRadius: 180,
     resizeMode: 'cover',
   },
   cardInfo: {

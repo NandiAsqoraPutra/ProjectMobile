@@ -22,7 +22,7 @@ const ItemHorizontal = ({item, variant, onPress}) => {
           <View>
             <View style={itemHorizontal.cardIcon}>
               <TouchableOpacity onPress={onPress}>
-                <Receipt21 color={colors.white()} variant={variant} size={20} />
+                <Receipt21 color={colors.black()} variant={variant} size={20} />
               </TouchableOpacity>
             </View>
           </View>
@@ -55,7 +55,7 @@ const ListHorizontal = ({data}) => {
       data={data}
       keyExtractor={item => item.id}
       renderItem={item => renderItem({...item})}
-      ItemSeparatorComponent={() => <View style={{width: 15}} />}
+      ItemSeparatorComponent={() => <View style={{width: 10}} />}
       contentContainerStyle={{paddingHorizontal: 24}}
       horizontal
       showsHorizontalScrollIndicator={false}
@@ -70,7 +70,7 @@ const itemHorizontal = StyleSheet.create({
   cardImage: {
     width: '100%',
     height: 200,
-    borderRadius: 15,
+    borderRadius: 35,
   },
   cardContent: {
     flexDirection: 'row',
@@ -85,12 +85,12 @@ const itemHorizontal = StyleSheet.create({
   },
   cardTitle: {
     fontFamily: fontType['Pjs-Bold'],
-    fontSize: 14,
-    color: colors.white(),
+    fontSize: 16,
+    color: colors.black(),
   },
   cardText: {
     fontSize: 10,
-    color: colors.white(),
+    color: colors.black(),
     fontFamily: fontType['Pjs-Medium'],
   },
   cardIcon: {
