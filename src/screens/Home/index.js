@@ -1,8 +1,9 @@
 import {BlogList, CategoryList} from '../../../data';
 import { fontType, colors } from '../../theme';
 import { ListHorizontal, ItemSmall } from '../../components';
-import React from 'react';
-import { ScrollView, StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import { ScrollView, StyleSheet, Text, View, FlatList, TouchableOpacity} from 'react-native';
+import {Element3} from 'iconsax-react-native';
 
 const ItemCategory = ({item, onPress, color}) => {
 return (
