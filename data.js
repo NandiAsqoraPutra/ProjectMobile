@@ -45,7 +45,7 @@ export const BlogList = [
     createdAt: 'Oct 30, 2023',
     totalComments: 90,
     totalLikes:2300,
-    content: 'Tidak perlu ragu lagi dalam memilih pakaian lari di toko StoreRun sudah menyiapkan pilihan terbaik untuk kalian dengan penawaran satu set pakaian lari untuk pria',
+    content: 'Tidak perlu ragu lagi dalam memilih pakaian lari di toko StoreRun sudah menyiapkan pilihan terbaik untuk kalian dengan penawaran satu set pakaian lari untuk pria Kaospolo atau Singlet Pilih bahan yang dapat menyerap keringat dengan baik, seperti Dri-FIT atau bahan teknis lainnya. Desain yang ringan dan longgar akan memberikan ventilasi yang baik dan meminimalkan gesekan pada tubuh. ersey atau Jaket Ringan Bergantung pada kondisi cuaca, jaket ringan yang dapat menahan angin atau embun pagi mungkin diperlukan. Pilih bahan yang mudah dilipat untuk kenyamanan saat tidak digunakan. Celana Pendek atau Celana Panjang Celana pendek yang ringan dan bernapas adalah pilihan umum untuk cuaca hangat, sementara celana panjang yang terbuat dari bahan teknis dapat memberikan perlindungan tambahan dan mempertahankan suhu tubuh saat cuaca dingin. Dengan memilih pakaian lari yang sesuai dengan kondisi cuaca dan kebutuhan Anda, Anda dapat menjalani aktivitas lari dengan nyaman dan dengan performa terbaik',
     },
     {
         id: 3,
