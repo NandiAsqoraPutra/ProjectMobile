@@ -23,7 +23,17 @@ export const CategoryList = [
     id: 6,
     categoryName: 'Lifestyle',
     },
+    
 ];
+export const ProfileData = {
+    profilePict:
+      'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cnVufGVufDB8fDB8fHww',
+    name: 'Data toko',
+    createdAt: '30, Desember 2023',
+    blogSuka: 50,
+    Mengikuti: 1000,
+    Pengikut: 2000,
+  };
 export const BlogList = [
     {
     id: 1,
@@ -158,4 +168,5 @@ image:
     totalLikes:5632,
     content: 'Beberapa peralatan ini dapat menunjang olahraga lari kalian secara maximal',
     },
+    
 ];

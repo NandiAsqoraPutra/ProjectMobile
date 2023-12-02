@@ -1,9 +1,10 @@
 import React from 'react';
 import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home, Discover, ProductsOffering, BlogDetail} from '../screens';
-import {Home2, LocationDiscover, Receipt21,} from 'iconsax-react-native'; 
+import {Home, Discover, ProductsOffering, Profile, BlogDetail, Search, AddBlogForm} from '../screens';
+import {Home2, LocationDiscover, Receipt21, ProfileCircle} from 'iconsax-react-native'; 
 import { fontType, colors } from '../theme';
+
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -55,6 +56,7 @@ return (
         headerShown: false,
         }}
     />
+    
     <Tab.Screen
         name="ProductsOffering"
         component={ProductsOffering}
@@ -70,9 +72,25 @@ return (
         headerShown: false,
         }}
     />
+     <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarLabel: 'Profile',
+          tabBarIcon: ({focused, color}) => (
+            <ProfileCircle
+              color={color}
+              variant={focused ? 'Bold' : 'Linear'}
+              size={24}
+            />
+          ),
+          headerShown: false,
+        }}
+      />
     </Tab.Navigator>
 );
 }
+
 const Router = () => {
 return (
     <Stack.Navigator>
@@ -93,6 +111,26 @@ return (
         ...TransitionPresets.SlideFromRightIOS,
         }}
     />
+    <Stack.Screen
+        name="SearchPage"
+        component={Search}
+        options={{
+          headerShown: false,
+          presentation: 'transparant',
+        }}
+      />
+<Stack.Screen
+        name="AddBlog"
+        component={AddBlogForm}
+        options={{
+          headerShown: false,
+          animationEnabled: true,
+          animationTypeForReplace: 'pop',
+          gestureEnabled: true,
+          gestureDirection : 'horizontal',
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
     </Stack.Navigator>
 );
 };

@@ -95,8 +95,8 @@ const BlogDetail = ({route}) => {
           <Text style={styles.category}>{selectedBlog.category}</Text>
           <Text style={styles.date}>{selectedBlog.createdAt}</Text>
         </View>
-        <Text style={styles.title}>{selectedBlog.title}</Text>
-        <Text style={styles.content}>{selectedBlog.content}</Text>
+        <Text style={styles.title}>{selectedBlog.cari}</Text>
+        <Text style={styles.content}>{selectedBlog.Koleksi}</Text>
       </Animated.ScrollView>
       <View style={styles.bottomBar}>
         <View style={{flexDirection:'row', gap:5, alignItems:'center'}}>

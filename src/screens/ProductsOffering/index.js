@@ -1,9 +1,10 @@
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, ScrollView, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Add} from 'iconsax-react-native';
 import {BlogList} from '../../../data';
 import { ItemProductsOffering } from '../../components';
 import { fontType, colors } from '../../theme';
+
 const ProductsOffering = () => {
 return (
     <View style={styles.container}>
@@ -12,11 +13,13 @@ return (
         <Add color={colors.black()} variant="Linear" size={30} />
     </View>
 <ScrollView showsVerticalScrollIndicator={false}>
+
         <View style={{paddingHorizontal:27, gap:10, paddingVertical:15}}>
         {BlogList.map((item, index) => (
         <ItemProductsOffering item={item} key={index} />
         ))}
         </View>
+        
     </ScrollView>
     </View>
 );
@@ -43,5 +46,7 @@ title: {
     fontFamily: fontType['Pjs-ExtraBold'],
     color: colors.black(),
     letterSpacing: -0.3,
-},
+
+    elevation: 8,
+  },
 });

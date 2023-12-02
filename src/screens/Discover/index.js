@@ -5,12 +5,14 @@ import {
   ScrollView,
   FlatList,
   Animated,
+  TouchableWithoutFeedback
 } from 'react-native';
 import React, {useRef} from 'react';
 import {BlogList} from '../../../data';
 import {ItemSmall} from '../../components';
 import {SearchNormal1} from 'iconsax-react-native';
 import {fontType, colors} from '../../theme';
+import { useNavigation } from "@react-navigation/native"; 
 
 const data = [
   {id: 1, label: 'pakaian lari'},
@@ -45,6 +47,7 @@ const FlatListRecent = () => {
   );
 };
 const Discover = () => {
+  const navigation = useNavigation();
   const scrollY = useRef(new Animated.Value(0)).current;
   const diffClampY = Animated.diffClamp(scrollY, 0, 160);
   const recentY = diffClampY.interpolate({
@@ -55,13 +58,17 @@ const Discover = () => {
   const recentBlog = BlogList.slice(5);
   return (
     <View style={styles.container}>
+      <TouchableWithoutFeedback onPress={() => navigation.navigate("SearchPage")}>
+
       <View style={styles.header}>
         <View style={styles.bar}>
           <SearchNormal1 size={18} color={colors.black(0.5)} variant="Linear" />
           <Text style={styles.placeholder}>Search</Text>
         </View>
       </View>
+      </TouchableWithoutFeedback>
       <Animated.View
+      
         style={[recent.container, {transform: [{translateY: recentY}]}]}>
         <Text style={recent.text}>Recent Search</Text>
         <FlatListRecent />
@@ -102,6 +109,12 @@ const styles = StyleSheet.create({
     elevation: 8,
     paddingTop: 8,
     paddingBottom: 4,
+    position: 'absolute',
+    top: 0,
+    zIndex: 1000,
+    right: 0,
+    left: 0,
+    backgroundColor: colors.darkModeBlue(),
   },
   bar: {
     flexDirection: 'row',
