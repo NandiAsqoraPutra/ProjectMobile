@@ -5,4 +5,5 @@ import ProductsOffering from "./ProductsOffering";
 import Profile from "./Profile";
 import Search from "./Search";
 import AddBlogForm from "./AddBlogForm";
-export {Home, BlogDetail, Discover, ProductsOffering, Profile, Search, AddBlogForm}
+import EditBlogForm from "./EditBlogForm";
+export {Home, BlogDetail, Discover, ProductsOffering, Profile, Search, AddBlogForm, EditBlogForm}

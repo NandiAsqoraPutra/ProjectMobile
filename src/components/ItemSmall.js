@@ -2,17 +2,20 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {Receipt21, Clock, Message} from 'iconsax-react-native';
 import React from 'react';
-import {fontType, colors} from '../theme';
 import {useNavigation} from '@react-navigation/native';
+import {fontType, colors} from '../theme';
+import {formatDate} from '../utils/formatDate';
 
 const ItemSmall = ({item}) => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity style={styles.cardItem} onPress={() => navigation.navigate('BlogDetail', {blogId: item.id})}>
+    <TouchableOpacity
+      style={styles.cardItem}
+      onPress={() => navigation.navigate('BlogDetail', {blogId: item.id})}>
       <FastImage
         style={styles.cardImage}
         source={{
-          uri: item.image,
+          uri: item?.image,
           headers: {Authorization: 'someAuthToken'},
           priority: FastImage.priority.high,
         }}
@@ -25,16 +28,16 @@ const ItemSmall = ({item}) => {
             gap: 30,
           }}>
           <View style={{gap: 5, flex: 1}}>
-            <Text style={styles.cardCategory}>{item.category}</Text>
-            <Text style={styles.cardTitle}>{item.title}</Text>
+            <Text style={styles.cardCategory}>{item.category?.name}</Text>
+            <Text style={styles.cardTitle}>{item?.title}</Text>
           </View>
-          <Receipt21 color={colors.black(0.6)} variant="Linear" size={20} />
+          <Receipt21 color={colors.grey(0.6)} variant="Linear" size={20} />
         </View>
         <View style={styles.cardInfo}>
           <Clock size={10} variant="Linear" color={colors.black(0.6)} />
-          <Text style={styles.cardText}>{item.createdAt}</Text>
+          <Text style={styles.cardText}>{formatDate(item?.createdAt)}</Text>
           <Message size={10} variant="Linear" color={colors.black(0.6)} />
-          <Text style={styles.cardText}>{item.totalComments}</Text>
+          <Text style={styles.cardText}>{item?.totalComments}</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -42,6 +45,7 @@ const ItemSmall = ({item}) => {
 };
 
 export default ItemSmall;
+
 const styles = StyleSheet.create({
   listCard: {
     paddingHorizontal: 27,
@@ -59,7 +63,7 @@ const styles = StyleSheet.create({
     fontFamily: fontType['Pjs-SemiBold'],
   },
   cardTitle: {
-    fontSize: 16,
+    fontSize: 14,
     fontFamily: fontType['Pjs-Bold'],
     color: colors.black(),
   },
