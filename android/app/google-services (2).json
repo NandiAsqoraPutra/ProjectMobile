@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "290523386383",
+    "project_id": "storerun-7f574",
+    "storage_bucket": "storerun-7f574.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290523386383:android:bff4cd3d85f42fe8fa097a",
+        "android_client_info": {
+          "package_name": "com.storerun"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATs9AAVs2_P9Sao7Guwney0bQirtLSvnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
