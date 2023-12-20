@@ -2,8 +2,9 @@ import {StyleSheet, Text, View, FlatList, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import {Receipt21} from 'iconsax-react-native';
 import FastImage from 'react-native-fast-image';
-import {fontType, colors} from '../theme';
 import {useNavigation} from '@react-navigation/native';
+import { fontType, colors } from '../theme';
+import { formatDate } from '../utils/formatDate';
 
 const ItemHorizontal = ({item, variant, onPress}) => {
   const navigation = useNavigation();
@@ -12,15 +13,15 @@ const ItemHorizontal = ({item, variant, onPress}) => {
       <FastImage
         style={itemHorizontal.cardImage}
         source={{
-          uri: item.image,
+          uri: item?.image,
           headers: {Authorization: 'someAuthToken'},
           priority: FastImage.priority.high,
         }}
         resizeMode={FastImage.resizeMode.cover}>
-        <View style={itemHorizontal.cardContent}>
+        <View style={itemHorizontal.cardProduk}>
           <View style={itemHorizontal.cardInfo}>
-            <Text style={itemHorizontal.cardTitle}>{item.title}</Text>
-            <Text style={itemHorizontal.cardText}>{item.createdAt}</Text>
+            <Text style={itemHorizontal.cardTitle}>{item?.title}</Text>
+            <Text style={itemHorizontal.cardText}>{formatDate(item?.createdAt)}</Text>
           </View>
           <View>
             <View style={itemHorizontal.cardIcon}>
@@ -43,6 +44,7 @@ const ListHorizontal = ({data}) => {
       setProductsOffering([...ProductsOffering, itemId]);
     }
   };
+
   const renderItem = ({item}) => {
     variant = ProductsOffering.includes(item.id) ? 'Bold' : 'Linear';
     return (
@@ -59,13 +61,15 @@ const ListHorizontal = ({data}) => {
       keyExtractor={item => item.id}
       renderItem={item => renderItem({...item})}
       ItemSeparatorComponent={() => <View style={{width: 10}} />}
-      contentContainerStyle={{paddingHorizontal: 24}}
+      contentContainerStyle={{paddingHorizontal: 27}}
       horizontal
       showsHorizontalScrollIndicator={false}
     />
   );
 };
+
 export default ListHorizontal;
+
 const itemHorizontal = StyleSheet.create({
   cardItem: {
     width: 280,
@@ -75,7 +79,7 @@ const itemHorizontal = StyleSheet.create({
     height: 200,
     borderRadius: 35,
   },
-  cardContent: {
+  cardProduk: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 15,
